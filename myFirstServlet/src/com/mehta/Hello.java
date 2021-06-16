@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class hello
  */
-@WebServlet(name = "Demo", urlPatterns = { "/Hello" })
+//@WebServlet(name = "Demo", urlPatterns = { "/" })
 public class Hello extends HttpServlet {
 	
     public Hello() {}
@@ -32,6 +32,14 @@ public class Hello extends HttpServlet {
 		out.print("<h3> Hello Servlet2 </h3>");
 		out.print("</body></html>");
 
-	}																			
-
+	}
+      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	  response.setContentType("text/html");	
+  		PrintWriter out=response.getWriter();		
+  		out.print("<html><body>");
+  		out.print("<h3> Hello Servlet </h3>");
+  		out.print("<h3> Hello Servlet3 </h3>");
+  		out.print("<h3> Hello Servlet5 </h3>");
+  		out.print("</body></html>");
+      }
 }
